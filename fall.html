@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxy Effect</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            animation: rotate 10s linear infinite;
+        
+        }
+
+        .galaxy {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            animation: rotate 10s linear infinite;
+        }
+        
+
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 5px white;
+            animation: twinkle 2s infinite alternate;
+        }
+
+        @keyframes twinkle {
+            0% {
+                opacity: 0.3;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+
+        body {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="galaxy">
+        <div class="galaxy-rotate"></div>
+    </div>
+
+    <script>
+        function createGalaxyStar() {
+            const star = document.createElement("div");
+            star.classList.add("star");
+
+            // Random angle & distance for spiral effect
+            const angle = Math.random() * 2 * Math.PI;
+            const radius = Math.random() * 200; // Spread out within 200px
+
+            const x = Math.cos(angle) * radius + 200; // Centered at (200,200)
+            const y = Math.sin(angle) * radius + 200;
+
+            star.style.left = `${x}px`;
+            star.style.top = `${y}px`;
+
+            // Random animation delay for twinkling effect
+            star.style.animationDuration = `${1 + Math.random()}s`;
+            star.style.animationDelay = `${Math.random() * 2}s`;
+
+            document.querySelector(".galaxy-rotate").appendChild(star);
+        }
+
+        // Generate multiple stars
+        for (let i = 0; i < 100; i++) {
+            createGalaxyStar();
+        }
+    </script>
+</body>
+</html>

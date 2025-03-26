@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="futurescope.css">
+    <title>Future IT Career</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+          }
+          html,body{
+            display: grid;
+            height: 100%;
+            place-items: center;
+            text-align: center;
+            background-image: url(pic/kidspagebg.gif);
+          }
+          .logo{
+                position: relative;
+                right: 540px;
+                top: 20px;
+          
+          }
+          .wrapper{
+            height: 60px;
+            width: 55vw;
+            background: #fff;
+            line-height: 60px;
+            border-radius: 50px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.25);
+            position: relative;
+            bottom: 130px;
+            left: 240px;
+          }
+          .wrapper nav{
+            position: relative;
+            display: flex;
+          }
+          .wrapper nav label{
+            flex: 1;
+            width: 100%;
+            z-index: 1;
+            cursor: pointer;
+          }
+          .wrapper nav label a{
+            position: relative;
+            z-index: -1;
+            color: #1d1f20;
+            font-size: 20px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.6s ease;
+          }
+          .wrapper nav #home:checked ~ label.home a,
+          .wrapper nav #inbox:checked ~ label.inbox a,
+          .wrapper nav #contact:checked ~ label.contact a,
+          .wrapper nav #heart:checked ~ label.heart a,
+          .wrapper nav #about:checked ~ label.about a{
+            color: #fff;
+          }
+          .wrapper nav label a i{
+            font-size: 25px;
+            margin: 0 7px;
+          }
+          .wrapper nav .tab{
+            position: absolute;
+            height: 100%;
+            width: 20%;
+            left: 0;
+            bottom: 0;
+            z-index: 0;
+            border-radius: 50px;
+            background: linear-gradient(45deg, #05abe0 0%,#8200f4 100%);
+            transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          }
+          .wrapper nav #inbox:checked ~ .tab{
+            left: 20%;
+          }
+          .wrapper nav #contact:checked ~ .tab{
+            left: 40%;
+          }
+          .wrapper nav #heart:checked ~ .tab{
+            left: 60%;
+          }
+          .wrapper nav #about:checked ~ .tab{
+            left: 80%;
+          }
+          .wrapper nav input{
+            display: none;
+          }
+          /*responsive page*/
+          body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        /* Logo styling */
+        .logo {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .logo img {
+            height: 180px;
+            width: 180px;
+            border-radius: 90px;
+        }
+        /* Navigation bar styling */
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+            position: relative;
+            bottom: 130px;
+            left: 300px;
+            border-radius: 90px;
+            
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .navbar a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+        .navbar .icon {
+            display: none;
+        }
+        /* Responsive layout - makes the navigation links stack on top of each other instead of side by side */
+        @media screen and (max-width: 600px) {
+            .navbar a:not(:first-child) {display: none;}
+            .navbar a.icon {
+                float: right;
+                display: block;
+            }
+        }
+        @media screen and (max-width: 600px) {
+            .navbar.responsive {position: relative;}
+            .navbar.responsive .icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+            .navbar.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+        }
+        /* Image gallery styling */
+        .gallery {
+          
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 0 4px;
+        }
+        .gallery img {
+            margin: 8px;
+            width: fit-content;
+            height: auto;
+        }
+        /* Responsive layout for image gallery */
+        @media screen and (max-width: 800px) {
+            .gallery img {
+                width: calc(50% - 16px);
+            }
+        }
+        @media screen and (max-width: 500px) {
+            .gallery img {
+                width: calc(100% - 16px);
+            }
+        }
+        .img1{
+          width: 1000px;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- <header>
+        <div class="logo">
+            <img src="/simg/snowlogo.gif" style="height: 180px; width:180px; border-radius:90px">
+        </div>
+          <div class="wrapper">
+              <nav>
+                 <input type="radio" name="tab" id="home" checked>
+                 <input type="radio" name="tab" id="inbox">
+                 <input type="radio" name="tab" id="contact">
+                 <input type="radio" name="tab" id="heart">
+                 <input type="radio" name="tab" id="about">
+                 <label for="home" class="home"><a href="main.html"><i class="fas fa-home"></i>Home</a></label>
+                 <label for="inbox" class="inbox"><a href="about.html"><i class="far fa-comment"></i>Inbox</a></label>
+                 <label for="contact" class="contact"><a href="kidspage.html"><i class="far fa-envelope"></i>Contact</a></label>
+                 <label for="heart" class="heart"><a href="conact.html"><i class="far fa-heart"></i>Heart</a></label>
+                 <label for="about" class="about"><a href="future.html"><i class="far fa-user"></i>About</a></label>
+                 <div class="tab"></div>
+              </nav>
+           </div>
+    </header>
+    <article>
+        <img src="/simg/future/future1page.gif" style="margin-bottom: 60px;" class="img-fluid" alt="Image 1">
+        <img src="/simg/future/FUTIRESECONDPAGE.gif" style="margin-bottom: 60px;" class="img-fluid" alt="Image 2">
+        <img src="/simg/future/future3page.gif" style="margin-bottom: 60px;" class="img-fluid" alt="Image 3">
+        <img src="/simg/future/futurefooter.gif" style="margin-bottom: 60px;" class="img-fluid" alt="Image 4">
+    </article> -->
+
+    <div class="logo">
+      <img src="/simg/snowlogo.gif" alt="Logo">
+  </div>
+
+  <div class="navbar" id="myNavbar">
+      <a href="main.html" class="active"><i class="fas fa-home"></i> Home</a>
+      <a href="about.html"><i class="far fa-comment"></i> Inbox</a>
+      <a href="kidspage.html"><i class="far fa-envelope"></i> Contact</a>
+      <a href="conact.html"><i class="far fa-heart"></i> Heart</a>
+      <a href="future.html"><i class="far fa-user"></i> About</a>
+      <a href="javascript:void(0);" class="icon" onclick="toggleNavbar()">
+          <i class="fa fa-bars"></i>
+      </a>
+  </div>
+
+  <div class="gallery">
+      <img src="/simg/future/future1page.gif" alt="Image 1" class="img1">
+      <img src="/simg/future/FUTIRESECONDPAGE.gif" alt="Image 2" class="img2">
+      <img src="/simg/future/future3page.gif" alt="Image 3" class="img3">
+      <img src="/simg/future/futurefooter.gif" alt="Image 4" class="img4">
+  </div>
+
+  <script>
+      function toggleNavbar() {
+          var x = document.getElementById("myNavbar");
+          if (x.className === "navbar") {
+              x.className += " responsive";
+          } else {
+              x.className = "navbar";
+          }
+      }
+    </script>
+</body>
+</html>

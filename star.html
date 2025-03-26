@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blinking Stars Effect</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: black;
+        }
+
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: white;
+            border-radius: 50%;
+            animation: blink 1.5s infinite alternate;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 0.3;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function createStar() {
+            const star = document.createElement("div");
+            star.classList.add("star");
+
+            // Random position
+            const posX = Math.random() * window.innerWidth;
+            const posY = Math.random() * window.innerHeight;
+
+            star.style.left = `${posX}px`;
+            star.style.top = `${posY}px`;
+
+            // Random animation delay for variation
+            star.style.animationDuration = `${1 + Math.random()}s`;
+            star.style.animationDelay = `${Math.random() * 2}s`;
+
+            document.body.appendChild(star);
+        }
+
+        // Generate multiple stars
+        for (let i = 0; i < 300; i++) {
+            createStar();
+        }
+    </script>
+</body>
+</html>

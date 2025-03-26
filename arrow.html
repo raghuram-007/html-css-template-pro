@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arrow</title>
+    <style>
+        .line{
+            width: 417px;
+            height: 14px;
+            position: relative;
+            top: 110px;
+            background-color:green;
+            animation-name: arrow;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+        .arr{
+
+            width: 99px;
+            height: 14px;
+            background-color: tomato;
+            position: relative;
+            left: 380px;
+            rotate: 90deg;
+            animation-name: arrow;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+                
+        }
+        .arr1{
+
+            width: 67px;
+            height: 14px;
+            background-color: tomato;
+            position: relative;
+            left: 410px;
+            rotate: -40deg;
+            animation-name: arrow;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+       
+        }
+        .arr2{
+
+            width: 67px;
+            height: 14px;
+            background-color: tomato;
+            position: relative;
+            left: 410px;
+            bottom: 70px;
+            rotate: 40deg;
+            animation-name: arrow;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+         
+        }
+        .bow{
+            width: 407px;
+            height: 14px;
+            background-color:chartreuse;
+            rotate: 90deg;
+            /* border-radius: 767%; */
+        }
+        @keyframes arrow{
+        10%{
+            transform: translateX(150px);
+            transition: all ease-in-out 0.6s;
+        }    
+        }
+
+    </style>
+</head>
+<body>
+    <div class="line">
+<div class="arr">
+
+</div>
+<div class="arr1">
+
+</div>
+<div class="arr2">
+
+</div>
+
+    </div>
+    
+</body>
+</html>
